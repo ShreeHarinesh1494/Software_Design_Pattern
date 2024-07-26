@@ -133,6 +133,10 @@ const SignIn = () => {
         }, 500); // Delay to allow for the rotation effect
     };
 
+    const handleRegisterClick = () => {
+        navigate('/register');
+    };
+
     const renderForm = () => {
         if (isAdmin) {
             return (
@@ -207,7 +211,7 @@ const SignIn = () => {
                 </div>
                 <div className="mt-5 text-sm flex justify-between items-center text-[#002D74]">
                     <p>Don't have an account?</p>
-                    <button className="py-2 px-5 bg-white border border-[#002D74] rounded-xl hover:bg-[#002D74] hover:text-white transition-colors duration-300 transform hover:scale-110">Register</button>
+                    <button onClick={handleRegisterClick} className="py-2 px-5 bg-white border border-[#002D74] rounded-xl hover:bg-[#002D74] hover:text-white transition-colors duration-300 transform hover:scale-110">Register</button>
                 </div>
             </div>
         );

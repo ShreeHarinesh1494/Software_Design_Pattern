@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../assets/css/Register.css'; // Assuming similar styles as Login.css
+
 
 const SignUp = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -10,6 +12,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -34,6 +37,11 @@ const SignUp = () => {
 
         // Example of a successful registration
         toast.success('Registration successful!');
+    };
+
+    const handleLoginClick=()=>
+    {
+        navigate('/login');
     };
 
     return (
@@ -97,7 +105,7 @@ const SignUp = () => {
                         </form>
                         <div className="mr-8 mt-3 text-sm flex flex-col items-center text-[#002D74]">
                             <p className="mb-2 text-center">Already have an account?</p>
-                            <button className="py-2 px-5 mr-5 bg-white border border-[#002D74] rounded-xl hover:bg-[#002D74] hover:text-white transition-colors duration-300 transform hover:scale-110 ml-2">Login</button>
+                            <button onClick={handleLoginClick} className="py-2 px-5 mr-5 bg-white border border-[#002D74] rounded-xl hover:bg-[#002D74] hover:text-white transition-colors duration-300 transform hover:scale-110 ml-2">Login</button>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="relative top-0 left-0 w-full h-[8vh] flex justify-between items-center shadow-md bg-white dark:bg-gray-900 border-b-2 border-primary dark:border-primary transition-all duration-300">
+    <div className="fixed top-0 left-0 w-full h-[8vh] flex justify-between items-center shadow-md bg-white dark:bg-gray-900 border-b-2 border-primary dark:border-primary transition-all duration-300 z-50">
       {/* BorderBeam component */}
       <BorderBeam
         className="absolute inset-0"
